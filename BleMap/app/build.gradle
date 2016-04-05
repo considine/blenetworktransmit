@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.johnpconsidine.blemap"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -28,4 +28,5 @@ dependencies {
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
     compile project(':transmit')
+    compile project(':bletransmit')
 }

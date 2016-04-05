@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity  {
         else {
 
             //MAP activity:
-            Intent mapIntent = new Intent(MainActivity.this, BTActivity.class);
+            Intent mapIntent = new Intent(MainActivity.this, MapActivity.class);
             startActivity(mapIntent);
         }
 

@@ -43,7 +43,7 @@
         <activity android:name=".MapActivity" >
         </activity>
         <activity
-            android:name=".BleActivity"
+            android:name=".BleAdvertiseActivity"
             android:label="@string/title_activity_ble"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>

@@ -70,7 +70,7 @@ public class BleScanActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBatchScanResults(List<ScanResult> results) {
+        public void onBatchScanResults(List<ScanResult> results) {  //should add AdRecord to process the list of results one by one
             Log.d(TAG, "onBatchScanResults: "+results.size()+" results");
             for (ScanResult result : results) {
                 processResult(result);
@@ -83,21 +83,11 @@ public class BleScanActivity extends AppCompatActivity {
         }
 
         private void processResult(ScanResult result) {
-            //Log.i(TAG, "New LE Device: " + result.getDevice().getName() + " @ " + result.getRssi());
 
+            //Log.i(TAG, "New LE Device: " + result.getDevice().getName() + " @ " + result.getRssi());
             Log.i(TAG, String.valueOf(System.currentTimeMillis())+result);
 
-            //byte[] loc_received = result.getServiceData(LOC_SERVICE);
-
-            /*
-             * Create a new beacon from the list of obtains AD structures
-             * and pass it up to the main thread
-             */
-/*            TemperatureBeacon beacon = new TemperatureBeacon(result.getScanRecord(),
-                    result.getDevice().getAddress(),
-                    result.getRssi());
-            mHandler.sendMessage(Message.obtain(null, 0, beacon));*/
-
+            Loc loc = new Loc(result.getScanRecord());
         }
     };
 

@@ -23,8 +23,7 @@ public class BleAdvertiseActivity extends AppCompatActivity {
     private BluetoothLeAdvertiser mBluetoothLeAdvertiser;
 
     //When advertising loc data, transform float to byte[] array
-    public static byte[] FloatToArray(float Value)
-    {
+    public static byte[] FloatToArray(float Value) {
         int accum = Float.floatToRawIntBits(Value);
         byte[] byteRet = new byte[4];
         byteRet[0] = (byte)(accum & 0xFF);
@@ -34,7 +33,19 @@ public class BleAdvertiseActivity extends AppCompatActivity {
         return byteRet;
     }
 
-    //When receiving loc data, transform byte[] array to float
+/*    byte[] Lat = FloatToArray(latitude);
+    byte[] Long = FloatToArray(longitude);*/
+
+    //concatenate two byte[] array of latitude and byte[] array of longitude.
+    public static byte[] ArrayConcat(byte[] Lat, byte[] Long){
+        byte[] ret = new byte[Lat.length + Long.length];
+
+        System.arraycopy(Lat, 0, ret, 0, Lat.length);
+        System.arraycopy(Long, 0, ret, Lat.length, Long.length);
+        return ret;
+    }
+
+/*    //When receiving loc data, transform byte[] array to float
     public static float ArryToFloat(byte[] Array,int Pos)
     {
         int accum = 0;
@@ -43,7 +54,8 @@ public class BleAdvertiseActivity extends AppCompatActivity {
         accum |= (long)(Array[Pos+2] & 0xFF)<<16;
         accum |= (long)(Array[Pos+3] & 0xFF)<<24;
         return Float.intBitsToFloat(accum);
-    }
+    }*/
+
 
     public void startAdvertising(byte[] data_out){ //the input is byte[] array, and any double should be transformed
         if (mBluetoothLeAdvertiser == null) return;

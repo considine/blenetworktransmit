@@ -61,8 +61,6 @@ public class MapActivity extends AppCompatActivity {
         });
 
 
-
-
         networkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,8 +68,6 @@ public class MapActivity extends AppCompatActivity {
                 Intent intent = new Intent(MapActivity.this, TransmitIntentService .class);
                 startService(intent);
                 Toast.makeText(MapActivity.this, "Network pins received", Toast.LENGTH_SHORT).show();
-
-
 
             }
         });
@@ -94,7 +90,6 @@ public class MapActivity extends AppCompatActivity {
                         .title("no notes"));
                // Log.v(TAG, "The lat is " + location.getParseGeoPoint(Utils.PLACE_OBJECT_LOCATION).getLatitude());
             }
-
 
         }
     }

@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -41,6 +41,11 @@
             android:value="@string/maps_key" />
 
         <activity android:name=".MapActivity" >
+        </activity>
+        <activity
+            android:name=".BleActivity"
+            android:label="@string/title_activity_ble"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 

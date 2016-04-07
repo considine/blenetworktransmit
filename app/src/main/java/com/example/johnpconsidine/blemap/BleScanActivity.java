@@ -10,7 +10,6 @@ import android.bluetooth.le.ScanSettings;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
@@ -39,7 +38,7 @@ public class BleScanActivity extends AppCompatActivity {
                 //.setDeviceName(string)
                 //.setManufacturerData()
                 //.setServiceData()
-                .setServiceUuid(Loc.LOC_SERVICE)
+                .setServiceUuid(LocRes.LOC_SERVICE)
                 .build();
 
         ArrayList<ScanFilter> filters = new ArrayList<ScanFilter>();
@@ -87,7 +86,8 @@ public class BleScanActivity extends AppCompatActivity {
             //Log.i(TAG, "New LE Device: " + result.getDevice().getName() + " @ " + result.getRssi());
             Log.i(TAG, String.valueOf(System.currentTimeMillis())+result);
 
-            Loc loc = new Loc(result.getScanRecord());
+            LocRes locres = new LocRes(result.getScanRecord());
+
         }
     };
 

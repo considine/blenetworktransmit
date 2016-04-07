@@ -16,5 +16,6 @@
     <string name="maps_key">AIzaSyBC8PEzQqLZUSuIMl37m87nqKdjTxbd91U</string>
     <string name="receive_network">Receive Locations over the network</string>
     <string name="receive_ble">Receive over BLE</string>
+    <string name="send_ble">Send over BLE</string>
     <string name="title_activity_ble">BleActivity</string>
 </resources>

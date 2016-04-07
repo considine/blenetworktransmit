@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.ParcelUuid;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 public class BleAdvertiseActivity extends AppCompatActivity {
@@ -83,10 +84,10 @@ public class BleAdvertiseActivity extends AppCompatActivity {
         mBluetoothLeAdvertiser.stopAdvertising(mAdvertiseCallback);
     }
 
-/*    public void restartAdvertising(byte[] data_out) {
+    public void restartAdvertising(byte[] data_out) {
         stopAdvertising();
         startAdvertising(data_out);
-    }*/
+    }
 
     private AdvertiseCallback mAdvertiseCallback = new AdvertiseCallback() {
         @Override
@@ -135,6 +136,10 @@ public class BleAdvertiseActivity extends AppCompatActivity {
             finish();
             return;
         }
-
     }
+
+    public void onUpdateClick(View v){
+        //restartAdvertising(data_out);
+    }
+
 }

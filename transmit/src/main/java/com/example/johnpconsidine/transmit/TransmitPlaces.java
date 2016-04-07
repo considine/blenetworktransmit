@@ -1,5 +1,6 @@
 package com.example.johnpconsidine.transmit;
 
+import android.bluetooth.le.ScanRecord;
 import android.util.Log;
 
 import com.parse.ParseException;
